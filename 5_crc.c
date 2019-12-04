@@ -52,20 +52,20 @@ void main(){
         binary(text[i]);
         strcat(data,bin);
     }
-    printf("Data word: ");
-    puts(data);
+    //printf("Data word: ");
+    //puts(data);
     printf("Enter generator in binary: ");
     gets(generator);
     glength=strlen(generator);  //n=no. of bits in generator
     dlength=strlen(data);
     for(i=dlength;i<dlength+glength-1;i++)  //to append n-1 zeros to the data to perform division
         data[i]='0';
-    printf("Padded data: %s\n",data);
+    //printf("Padded data: %s\n",data);
     crc();
     printf("Remainder: %s\n",remain);
     for(i=dlength;i<dlength+glength-1;i++)  //append the remain obtained to the data
         data[i]=remain[i-dlength];
-    printf("Codeword: %s\n",data);
+    //printf("Codeword: %s\n",data);
     printf("Testing error detection\nEnter the no. of error induced bits: ");
     scanf("%d",&ebits);
     srand(time(0));     //to seed rand() to obtain different random numbers on multiple execution
